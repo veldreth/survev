@@ -14,6 +14,10 @@ survev-config.json
 # sqlite db
 *.db
 
+# recording files
+*.surv
+*.surv.gz
+
 # Compiled source
 dist/
 

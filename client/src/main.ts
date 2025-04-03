@@ -255,6 +255,15 @@ class Application {
             if (a > i) {
                 $(".news-toggle").find(".account-alert").css("display", "block");
             }
+
+            $<HTMLInputElement>("#recording-playback-input").on("change", async (e) => {
+                const file = e.target.files![0];
+                if (!file) return;
+
+                const buff = await file.arrayBuffer();
+                this.game?.startPacketPlayBack(buff);
+            });
+
             this.setDOMFromConfig();
             this.setAppActive(true);
             const domCanvas = document.querySelector<HTMLCanvasElement>("#cvs")!;
